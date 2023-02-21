@@ -8,6 +8,7 @@ public class GameInput : MonoBehaviour
 
 
     public event EventHandler OnInteractAction;
+    public event EventHandler OnInteractAlternateAction;
     private PlayerInputActions playerInputActions;
 
 
@@ -17,9 +18,15 @@ public class GameInput : MonoBehaviour
         playerInputActions.Player.Enable();
 
         playerInputActions.Player.Interact.performed += Interact_performed;
+        playerInputActions.Player.InteractAlternate.performed += interactAlternate_performed;
     }
 
-    private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    private void interactAlternate_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) // input F cutting(cắt)
+    {
+        OnInteractAlternateAction?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) // input E tương tác
     {
         OnInteractAction?.Invoke(this, EventArgs.Empty);        //If nếu OnInteractAction null thì dừng ko thì thực hiện vế sau
     }
