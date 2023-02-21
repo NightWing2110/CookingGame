@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24cad447f5a74234eba103e2c8bea657, type: 3}
   m_Name: Chesse-ChesseSlices
   m_EditorClassIdentifier: 
-  input: {fileID: 11400000, guid: e8ed2bcf888079d468ba07b52e0addfc, type: 2}
-  output: {fileID: 11400000, guid: ffe5342dc0a2958449ca9cf615574576, type: 2}
+  input: {fileID: 11400000, guid: 15da5e78a0cb5f8498934b461a6c5add, type: 2}
+  output: {fileID: 11400000, guid: c8d2abacd4018af4d80ea8cfc377451e, type: 2}
+  cuttingProgressMax: 3
