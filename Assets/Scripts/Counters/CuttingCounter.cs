@@ -14,6 +14,8 @@ public class CuttingCounter : BaseCounter, IHasProgress
 
     public event EventHandler OnCut;
 
+    public static event EventHandler OnAnyCut;
+
     [SerializeField] private CuttingRecipeSO[] cuttingRecipeSOArray;
 
 
@@ -29,7 +31,7 @@ public class CuttingCounter : BaseCounter, IHasProgress
                 //Player is carrying something
                 if (HasRecipeWithInput(player.GetKitchenObject().GetKitchenObjectSO()))
                 {
-                    //Player carrying something can Cut
+                    //Player carrying something can Cutc
                     player.GetKitchenObject().SetKitchenObjectParent(this);
                     cuttingProgress = 0;
 
@@ -77,6 +79,7 @@ public class CuttingCounter : BaseCounter, IHasProgress
             cuttingProgress++;
 
             OnCut?.Invoke(this, EventArgs.Empty);
+            OnAnyCut?.Invoke(this, EventArgs.Empty);
 
             CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
 
