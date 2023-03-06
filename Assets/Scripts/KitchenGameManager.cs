@@ -86,6 +86,6 @@ public class KitchenGameManager : MonoBehaviour
 
     public float GetGamePlayingTimerNormalized()
     {
-        return 1 - (gamePlayingTimer / gamePlayingTimerMax);
+        return 1 - (gamePlayingTimer / gamePlayingTimerMax); // Cooldown thời gian
     }
 }
